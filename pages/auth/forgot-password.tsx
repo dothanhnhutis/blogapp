@@ -1,13 +1,11 @@
 import AuthLayout from "@/components/Layouts/AuthLayout";
 import { useOutsideClick } from "@/hook/useOutsideClick";
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState } from "react";
 import { z } from "zod";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState<string>("");
-
   const [isOnFocusEmailField, setOnFocusEmailField] = useState<boolean>(false);
   const refEmail = useOutsideClick<HTMLInputElement>((isOutSide) => {
     setOnFocusEmailField(!isOutSide);
@@ -16,7 +14,6 @@ const ForgotPassword = () => {
   return (
     <AuthLayout>
       <div className="flex flex-col items-center justify-center w-full max-w-[500px]">
-        <Image src="/images/logo.png" width={110} height={110} alt="Logo" />
         <h6 className="text-center font-normal text-sm mt-6">
           <p>Please enter the email address associated with your account and</p>
           <p>We will email you a link to reset your password.</p>

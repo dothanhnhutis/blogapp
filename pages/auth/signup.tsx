@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { AiFillGithub, AiOutlineCheck } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
@@ -163,11 +162,6 @@ const Register = () => {
   };
   return (
     <AuthLayout>
-      <div className="flex items-center justify-center w-full">
-        <div className="relative w-[110px] h-[110px]">
-          <Image priority src="/images/logo.png" fill sizes="110" alt="Logo" />
-        </div>
-      </div>
       <div className="flex mt-6 space-x-4 items-center justify-center">
         <button
           tabIndex={-1}

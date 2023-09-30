@@ -1,7 +1,7 @@
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions, getServerSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { getUserByEmail } from "./action";
-import { UserProfile } from "@/common.type";
+import { SessionInterface, UserProfile } from "@/common.type";
 import { comparePassword } from ".";
 
 export const authOptions: NextAuthOptions = {
@@ -41,3 +41,8 @@ export const authOptions: NextAuthOptions = {
     signIn: "/auth/signin",
   },
 };
+export async function getCurrentUser() {
+  const session = (await getServerSession(authOptions)) as SessionInterface;
+
+  return session;
+}

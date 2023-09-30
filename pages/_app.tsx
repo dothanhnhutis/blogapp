@@ -1,4 +1,3 @@
-import Layout from "@/components/Layouts/ManagerLayout";
 import "@/styles/globals.css";
 import { NextPage } from "next";
 import { Session } from "next-auth";
@@ -19,7 +18,6 @@ export default function App({
   pageProps,
 }: AppPropsWithLayout<{ session: Session }>) {
   const getLayout = Component.getLayout ?? ((page) => page);
-
   return (
     <SessionProvider session={pageProps.session}>
       {getLayout(<Component {...pageProps} />)}
